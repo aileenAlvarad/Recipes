@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+.search-container input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+.tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.tag button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}

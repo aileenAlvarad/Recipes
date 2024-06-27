@@ -1,0 +1,41 @@
+textarea.form-control {
+    min-height: calc(1.5em + 0.75rem + 2px); 
+    list-style-type: disc; /* Agrega viñetas por defecto */
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #747d88;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 10px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; 
+    
+} 
+
+.textarea-container textarea {
+    list-style-type: disc; /* Agrega viñetas por defecto */
+} 
+
+#preview {
+    max-width: 300px; /* Ancho máximo para la vista previa de la imagen */
+    margin-top: 10px; /* Espacio superior para separar la imagen del resto del formulario */
+} 
+
+.save-recipe {
+    display: block; 
+            margin: 0 auto;  
+            margin-top: 30px;
+} 
+
+.preview-title {
+    text-align: center;
+}
