@@ -21,7 +21,7 @@ export default function Footer () {
                             </div>
                         </div>
                         <div className="col-lg-3">
-                            <div className="d-flex justify-content-end pt-3">
+                            <div className="d-flex justify-content-end pt-3" >
                                 <a className="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i className="fab fa-twitter"></i></a>
                                 <a className="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i className="fab fa-facebook-f"></i></a>
                                 <a className="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i className="fab fa-youtube"></i></a>

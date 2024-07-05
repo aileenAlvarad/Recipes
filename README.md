@@ -38,6 +38,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 First time
 npm install
 
+npm run dev
+
 Install Bootstrap
 npm install bootstrap jquery popper.js 
 
