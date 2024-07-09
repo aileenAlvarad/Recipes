@@ -1,150 +1,27 @@
 "use client";
 import Image from "next/image"; 
-//import Testimonial from './Testimonial'; // Ajusta la ruta según donde tengas el archivo Testimonial.js o Testimonial.jsx
-
-//import styles from "./page.module.css";
-
-//import './js/bootstrap-bundle-min'; 
-//import './js/easin-min.js'; 
-//import './js/waypoints-min.js'; 
-//import './js/jquery-min.js';   
-//import './js/owl-carousel-min.js'; 
-//import './js/lightbox-min.js';    
-
-//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'; 
-//import {} from '@fortawesome/free-solid-svg-icons'; 
-//import React, { useState, useEffect } from 'react'; 
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-//import { User } from './types'; 
 
-interface Post {
+interface PostObject {
     userId: number;
     id: number;
     title: string;
     body: string;
   }
 
-  const TableComponent: React.FC = () => {
-    const [data, setData] = useState<Post[]>([]);
-    const [loading, setLoading] = useState(true);
+export default function Home() {
+    const [data, setData] = useState<PostObject[]>([]);
     useEffect(() => {
         // Realizar la llamada AJAX con axios
-        axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts/')
+        axios.get<PostObject[]>('https://jsonplaceholder.typicode.com/posts/')
           .then(response => {
             setData(response.data);
-            setLoading(false);
           })
           .catch(error => {
             console.error('Error fetching data:', error);
-            setLoading(false);
           });
       }, []);
-  
-
-  return (  
-    <div className="container">
-      <div className="mt-5"> 
-    <h3>Recipes Information</h3>
-    <table className="table table-striped" border={1}>
-      <thead >
-            <tr>
-            <th>userId</th>
-            <th>id</th>
-            <th>title</th>
-            <th>body</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(user => (
-          <tr key={user.id}>
-            <td>{user.userId}</td>
-            <td>{user.id}</td>
-            <td>{user.title}</td>
-            <td>{user.body}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>  
-    </div>
-    </div>
-  );
-
-};
-
-
-const Testimonial = () => (
-    <div className="container-fluid py-5">
-      <div className="container">
-        <div className="text-center mb-5">
-          <h5 className="text-primary text-uppercase">Testimonial1</h5>
-          <h1 className="display-3 text-uppercase mb-0">Our Clients Say</h1>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            <div className="owl-carousel testimonial-carousel">
-              <div className="owl-stage-outer">
-                <div className="owl-stage">
-                  {/* Testimonial items go here */}
-                </div>
-              </div>
-              <div className="owl-nav">
-                <button type="button" role="presentation" className="owl-prev">
-                  <i className="fa fa-angle-left"></i>
-                </button>
-                <button type="button" role="presentation" className="owl-next">
-                  <i className="fa fa-angle-right"></i>
-                </button>
-              </div>
-              <div className="owl-dots">
-                <button role="button" className="owl-dot active">
-                  <span></span>
-                </button>
-                <button role="button" className="owl-dot">
-                  <span></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        {/* Table component */}
-        <div className="mt-5">
-          <h3>Recipes Information</h3>
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>UserId</th>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Body</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>John Doe</td>
-                <td>30</td>
-                <td>john.doe@example.com</td>
-                <td>(123) 456-7890</td>
-              </tr>
-              {/* Add more rows as needed */}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  ); 
-  
-  interface PostObject {
-    id: number;
-    userId: number;
-    title: string;
-    body: string;
-  }
-export default function Home() {
-
 
   return (
     
@@ -447,8 +324,31 @@ export default function Home() {
                 </div>
             </div>
         </div> 
-        <Testimonial></Testimonial>
-        <TableComponent></TableComponent>
+        <div className="container">
+        <div className="mt-5"> 
+            <h3>Recipes Information</h3>
+            <table className="table table-striped" border={1}>
+                <thead >
+                        <tr>
+                        <th>Id</th>
+                        <th>UserId</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map(user => (
+                        <tr key={user.id}>
+                            <td>{user.id}</td>
+                            <td>{user.userId}</td>
+                            <td>{user.title}</td>
+                            <td>{user.body}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>  
+        </div> 
+    </div>
     </main>
         
   );
