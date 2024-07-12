@@ -13,10 +13,9 @@ interface PostObject {
 export default function Home() {
     const [data, setData] = useState<PostObject[]>([]);
     useEffect(() => {
-        // Realizar la llamada AJAX con axios
-        axios.get<PostObject[]>('https://jsonplaceholder.typicode.com/posts/')
+        axios.get<PostObject[]>('https://jsonplaceholder.typicode.com/posts/') //devuelve datos de ejemplo de recetas.
           .then(response => {
-            setData(response.data);
+            setData(response.data); //actualiza el estado data con los datos de las recetas obtenidas (una matriz de objetos Post).
           })
           .catch(error => {
             console.error('Error fetching data:', error);
@@ -24,7 +23,7 @@ export default function Home() {
       }, []);
 
   return (
-    
+   <>
     <main>
         <div className="container-fluid page-header py-5">
             <h1 className="text-center text-white display-6">Testimonial</h1>
@@ -350,7 +349,7 @@ export default function Home() {
         </div> 
     </div>
     </main>
-        
+    </>   
   );
 } 
 

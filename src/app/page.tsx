@@ -1,20 +1,5 @@
 "use client";
 import Image from "next/image"; 
-//import Testimonial from './Testimonial'; // Ajusta la ruta según donde tengas el archivo Testimonial.js o Testimonial.jsx
-
-//import styles from "./page.module.css";
-
-//import './js/bootstrap-bundle-min'; 
-//import './js/easin-min.js'; 
-//import './js/waypoints-min.js'; 
-//import './js/jquery-min.js';   
-//import './js/owl-carousel-min.js'; 
-//import './js/lightbox-min.js';    
-
-//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'; 
-//import {} from '@fortawesome/free-solid-svg-icons'; 
-//import React, { useState, useEffect } from 'react'; 
-
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -29,17 +14,16 @@ interface Post {
 
   const TableComponent: React.FC = () => {
     const [data, setData] = useState<Post[]>([]);
-    const [loading, setLoading] = useState(true);
+    //const [loading, setLoading] = useState(true);
     useEffect(() => {
-        // Realizar la llamada AJAX con axios
         axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts/')
           .then(response => {
             setData(response.data);
-            setLoading(false);
+           // setLoading(false);
           })
           .catch(error => {
             console.error('Error fetching data:', error);
-            setLoading(false);
+           // setLoading(false);
           });
       }, []);
   
