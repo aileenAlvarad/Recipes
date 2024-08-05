@@ -277,4 +277,7 @@ sketch
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,node,eclipse
+# End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,node,eclipse               
+
+# Ignore next.config.mjs
+next.config.mjs
