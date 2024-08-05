@@ -1,38 +1,38 @@
 'use client'; 
-import type { Metadata } from "next";
-//import "..public/sass/style.css";
+
+import React, { Suspense } from "react"; 
+//import styled from 'styled-components'; 
+//import type { Metadata } from "next";
 import "bootstrap-icons/font/bootstrap-icons.css"; 
 import "./css/bootstrap-icons.css";
-import { Children, Suspense } from "react";
 import Header from "./Header"; 
 import "./css/googleFonts.css"; 
-import { Inter } from "next/font/google";
 import "./css/globals.css";
 import "./css/bootstrap.min.css"; 
 import "./css/lightbox.min.css";  
 import "./css/owlcarousel.min.css"; 
 import "./css/all.css";
-import Footer from "./Footer"; 
+import Footer from "./Footer";    
+import "./css/recipe.css";
 
 
-const inter = Inter({ subsets: ["latin"] });
 
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
-      
-      <body cz-shortcut-listen="true">
-        <Suspense>
+    <>
+    <html>
+      <body suppressHydrationWarning={true}>
+        <Suspense fallback={<div></div>}>
           <Header />
-          {children}
+          <main>
+            {children}
+          </main>
           <Footer />
         </Suspense>
       </body>
     </html>
+    </>
   );
-}
+};
+
+export default Layout;

@@ -279,5 +279,5 @@ sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,node,eclipse               
 
-# Ignore next.config.mjs
-next.config.mjs
+# Ignore package-lock.json
+package-lock.json

@@ -3,7 +3,8 @@ import Image from "next/image";
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-//import { User } from './types'; 
+//import { User } from './types';  
+
 
 interface Post {
     userId: number;
@@ -121,12 +122,7 @@ const Testimonial = () => (
     </div>
   ); 
   
-  interface PostObject {
-    id: number;
-    userId: number;
-    title: string;
-    body: string;
-  }
+  
 export default function Home() {
 
 
